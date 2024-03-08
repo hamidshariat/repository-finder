@@ -1,0 +1,17 @@
+<span>dkvoksd</span>
+
+
+<mat-card class="folder m-4 container" *ngIf="repositories.length>0">
+    <mat-card-footer class="ListRepositories">
+      <mat-selection-list class="repositoryList">
+
+        <mat-list-item *ngFor="let repo of repositories">
+          <a href="#" (click)="showRepositoryContents(repo.name)">
+            <mat-icon>folder</mat-icon>
+            {{ repo.name }}
+          </a>
+        </mat-list-item>
+
+      </mat-selection-list>
+    </mat-card-footer>
+  </mat-card>

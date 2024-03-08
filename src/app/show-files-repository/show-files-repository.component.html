@@ -1,0 +1,10 @@
+<mat-card class="showFolder m-4">
+  <mat-card-content *ngFor="let content of repositoryContents">
+    <div *ngIf="content.type === 'file'" [routerLink]="['files', content.name]">
+      <a href="#" (click)="showFileContent(content.download_url)">{{ content.name }}</a>
+    </div>
+    <div *ngIf="content.type === 'dir'">
+      <a href="#" (click)="showRepositoryContents(content.name)">{{ content.name }}</a>
+    </div>
+  </mat-card-content>
+</mat-card>
